@@ -1,3 +1,4 @@
 export class CurrencyValueObject {
-  readonly currency: '€';
+  readonly currency: string;
+  readonly quantity: string;
 }
