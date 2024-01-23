@@ -11,6 +11,9 @@ docker-compose up -d
 
 5. Levantar proyecto en desarrollo: `npm run start:dev`
 
+6. Lanza el seed `http://localhost:3000/api/seed`
+
 ## Endpoints
 
-`http://localhost:3000/api/account/1`
+### Busca cuenta por id
+`http://localhost:3000/api/account/:id`
