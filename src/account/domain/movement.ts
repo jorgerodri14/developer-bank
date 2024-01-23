@@ -1,4 +1,4 @@
-import { CurrencyValueObject } from './currency.vo';
+import { CurrencyValueObject } from './currency';
 
 export enum TypeMovement {
   INCOME = 'INCOME',

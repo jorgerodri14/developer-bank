@@ -4,6 +4,6 @@ import { AccountModule } from './account/account.module';
 import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), DatabaseModule, AccountModule],
+  imports: [ConfigModule.forRoot(), AccountModule, DatabaseModule],
 })
 export class AppModule {}
