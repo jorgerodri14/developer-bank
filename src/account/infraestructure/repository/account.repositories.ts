@@ -12,8 +12,11 @@ export class TypeORMAccountRepository implements AccountRepository {
   ) {}
 
   async findOne(id: number): Promise<Account> {
-    return await this.accountRepository.findOneBy({
-      id,
-    });
+    try {
+      const account = await this.accountRepository.findOneBy({ id });
+      return account;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

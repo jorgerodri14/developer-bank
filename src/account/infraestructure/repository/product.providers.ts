@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { TypeORMAccountRepository } from './account.repositories';
+import { AccountTypeOrmEntity } from '../entities/account.entity';
 
 export const ACCOUNT_REPOSITORY = 'ACCOUNT_REPOSITORY';
 
@@ -7,7 +7,7 @@ export const accountRepositoryProviders = [
   {
     provide: ACCOUNT_REPOSITORY,
     useFactory: (dataSource: DataSource) =>
-      dataSource.getRepository(TypeORMAccountRepository),
+      dataSource.getRepository(AccountTypeOrmEntity),
     inject: ['DATA_SOURCE'],
   },
 ];

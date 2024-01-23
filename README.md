@@ -10,3 +10,7 @@ docker-compose up -d
 ```
 
 5. Levantar proyecto en desarrollo: `npm run start:dev`
+
+## Endpoints
+
+`http://localhost:3000/api/account/1`
