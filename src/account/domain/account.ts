@@ -1,5 +1,5 @@
 export class Account {
-  readonly id: number;
+  readonly id: string;
 
   readonly accountNumber: string;
 }

@@ -7,9 +7,8 @@ export const AccountTypeOrmEntity = new EntitySchema<Account>({
   target: Account,
   columns: {
     id: {
-      type: 'int',
+      type: 'text',
       primary: true,
-      generated: true,
     },
     accountNumber: {
       type: 'text',

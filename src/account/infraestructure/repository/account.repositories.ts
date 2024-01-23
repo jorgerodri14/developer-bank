@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { Account } from 'src/account/domain/account';
 import { AccountRepository } from 'src/account/domain/account.repository';
 import { Repository } from 'typeorm';
+import { CreateAccountDto } from '../dtos/create-account.dto';
 import { ACCOUNT_REPOSITORY } from './product.providers';
 
 @Injectable()
@@ -11,12 +12,13 @@ export class TypeORMAccountRepository implements AccountRepository {
     private readonly accountRepository: Repository<Account>,
   ) {}
 
-  async findOne(id: number): Promise<Account> {
-    try {
-      const account = await this.accountRepository.findOneBy({ id });
-      return account;
-    } catch (error) {
-      console.log(error);
-    }
+  async create(createAccountDto: CreateAccountDto) {
+    const account = this.accountRepository.create(createAccountDto);
+
+    await this.accountRepository.save(account);
+  }
+
+  async findOne(id: string): Promise<Account> {
+    return await this.accountRepository.findOneBy({ id });
   }
 }

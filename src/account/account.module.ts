@@ -13,5 +13,6 @@ import { accountRepositoryProviders } from './infraestructure/repository/product
     TypeORMAccountRepository,
   ],
   imports: [DatabaseModule],
+  exports: [AccountService],
 })
 export class AccountModule {}
